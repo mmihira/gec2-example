@@ -1,0 +1,3 @@
+This will be templated onto the server
+
+The ip of the node: {{ index .nodes "app" "ip" }}

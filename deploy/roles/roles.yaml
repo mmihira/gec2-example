@@ -1,0 +1,21 @@
+init:
+  steps:
+    - stepType: "script"
+      scripts:
+        - "roles/init/run.sh"
+    - stepType: "template"
+      src: "roles/init/test.txt"
+      dst: "/tmp/test.txt"
+docker:
+  steps:
+    - stepType: "script"
+      scripts:
+        - "roles/docker/install.sh"
+    - stepType: "script"
+      scripts:
+        - "roles/docker/compose-install.sh"
+echo:
+  steps:
+    - stepType: "script"
+      scripts:
+        - "roles/echo/run.sh"

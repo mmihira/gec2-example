@@ -1,0 +1,17 @@
+provider: "AWS"
+nodes:
+  - app:
+      ami: "ami-0b76c3b150c6b1423"
+      type: "t2.small"
+      placement: "ap-southeast-2a"
+      attach_volume: false
+      keyname: "gec2_example"
+      security_groups:
+        - "ssh"
+      roles:
+        - "init"
+        - "docker"
+        - "echo"
+
+roles: ["init", "docker", "echo"]
+
